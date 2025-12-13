@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warsaw Gravel Race</title>
+    <script>
+      (function () {
+        const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || ""];
+        const normalized = languages.map(function (lang) {
+          return (lang || "").toLowerCase();
+        });
+        const target = normalized.some(function (lang) {
+          return lang.startsWith("pl");
+        })
+          ? "/pl/index.html"
+          : "/en/index.html";
+
+        if (window.location.pathname !== target) {
+          window.location.replace(target);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting... If you are not redirected, choose your language:</p>
+    <ul>
+      <li><a href="/pl/index.html">Polski</a></li>
+      <li><a href="/en/index.html">English</a></li>
+    </ul>
+  </body>
+</html>

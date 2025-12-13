@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warsaw Gravel Race</title>
+    <script type="module" src="/components/nav.js"></script>
+    <script type="module" src="/components/footer.js"></script>
+    <script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+  </head>
+  <body class="min-h-screen   bg-primary ">
+    <div class=" bg-primary bg-[url(/public/img/warsaw.png)] bg-cover bg-blend-overlay">
+    <main class="mx-auto max-w-7xl px-6 py-6  ">
+      <wgr-nav></wgr-nav>
+      <div class="flex flex-col gap-8">
+        <div class=" flex flex-row lg:items-end items-start gap-6 rounded-2xl bg-[url(/public/img/banners/registration-mob.jpg)] lg:bg-[url(/public/img/banners/registration.jpg)] bg-cover bg-center h-[638px] p-2 pt-20  lg:p-8 justify-start botto  shadow-lg ring-1 ring-primary/40">
+        
+          <div class="md:w-3/4 w-full pb-20 lg:pb-0  flex flex-col items-center lg:items-start gap-4 text-center lg:text-left"> 
+            <h1 class="lg:text-8xl text-white font-secondary text-5xl " >Register for <br>Warsaw Gravel Series</h1>
+            
+        </div>
+          
+        </div>
+
+        <div class="flex flex-col pt-8">
+          <div class="flex justify-start" ><span class=" text-center lg:text-left text-2xl uppercase lg:text-3xl  text-white font-bold opacity-100"> Choose your way to join</span></div>
+          
+        </div>
+
+         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8">
+          
+            <div class="grid grid-flow-row  gap-0 rounded-lg bg-accent1 px-4 lg:px-12 py-8 shadow-lg ring-1 ring-primary/40">
+            <div class="flex items-center justify-start"> <img src="/public/img/icons/bicycle.svg" alt="" class=" w-size-40" /></div>
+            <div class="grid gap-6 lg:gap-4 ">
+                <h1 class="text-4xl font-semibold leading-tight text-primary">Individual</h1>
+                <p class=" text-xl text-primary font-bold">
+                Sign up for any race in the series, ride at your own pace, and become part of our gravel community. <br>
+                <span class=" text-lg font-normal">Perfect for beginners and experienced riders alike.</span>
+                </p>
+                <button type="button" class=" w-fit px-4 text-secondary bg-primary box-border border border-transparent rounded-md hover:bg-accent2 transition-colors focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-base py-2 focus:outline-none">Register as an Individual</button>
+            </div>
+            </div>
+
+            <div class="grid grid-flow-row  gap-0 rounded-lg bg-accent1 px-4 lg:px-12 py-8 shadow-lg ring-1 ring-primary/40">
+                <div class="flex items-center justify-start"> <img src="/public/img/icons/team.svg" alt="" class=" w-size-40" /></div>
+                <div class="grid gap-6 lg:gap-4 ">
+                    <h1 class="text-4xl font-semibold leading-tight text-primary">For Company / Team</h1>
+                    <p class=" text-xl text-primary font-bold">
+                    Bring your colleagues and enjoy a worry-free racing experience.<br>
+                    <span class=" text-lg font-normal">We simplify everything, registration, rules, logistics. <br>Just gather your riders and we’ll handle the rest.</span>
+                    </p>
+                    <button type="button" class=" w-fit px-4 text-secondary bg-primary box-border border border-transparent rounded-md hover:bg-accent2 transition-colors focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-base py-2 focus:outline-none">Register Your Company / Team</button>
+                </div>
+
+        </div>
+
+
+        
+
+      </div>
+
+      
+      
+    </main>
+    </div>
+    
+    <wgr-footer></wgr-footer>
+
+    
+
+  </body>
+</html>

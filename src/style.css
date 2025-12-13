@@ -1,0 +1,48 @@
+/* Local Sawton Industrial font faces */
+@font-face {
+  font-family: "Sawton Industrial";
+  src: url("/sawton-industrial/sawtonindustrial-thin-webfont.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sawton Industrial";
+  src: url("/sawton-industrial/sawtonindustrial-light-webfont.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sawton Industrial";
+  src: url("/sawton-industrial/sawtonindustrial-regular-webfont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sawton Industrial";
+  src: url("/sawton-industrial/sawtonindustrial-medium-webfont.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sawton Industrial";
+  src: url("/sawton-industrial/sawtonindustrial-bold-webfont.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Inter", "Segoe UI", sans-serif;
+}
