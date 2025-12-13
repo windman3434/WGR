@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Warsaw Gravel Race</title>
-    <script>
+    <title>Warsaw Gravel Race - Home</title>
+    <script type="module" src="/components/nav.js"></script>
+    <script type="module" src="/components/footer.js"></script>
+    <script type="module" src="/src/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
+ <script>
       (function () {
         const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || ""];
         const normalized = languages.map(function (lang) {
@@ -21,12 +26,19 @@
         }
       })();
     </script>
+
+   
   </head>
-  <body>
-    <p>Redirecting... If you are not redirected, choose your language:</p>
-    <ul>
-      <li><a href="/pl/index.html">Polski</a></li>
-      <li><a href="/en/index.html">English</a></li>
-    </ul>
+  <body class="min-h-screen   bg-primary ">
+    <section class="w-full p-24 flex flex-col gap-8 items-center align-middle content-center h-lvh">
+      <div><img src="/public/img/logo-dark.svg" alt="" class=" h-auto  w-80" /></div>
+      <h1 class="text-secondary text-center">Redirecting... If you are not redirected, choose your language:</h1>
+       <div class="flex flex-row gap-8">
+        <a href="/pl/index.html" class="text-secondary hover:text-accent1">🇵🇱 Polski</a>
+        <a href="/en/index.html" class="text-secondary hover:text-accent1">🇬🇧 English</a>
+      </div> 
+    
+    </section>
+    
   </body>
 </html>
