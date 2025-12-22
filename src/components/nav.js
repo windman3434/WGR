@@ -6,7 +6,7 @@ class WgrNav extends HTMLElement {
     <div class="flex lg:flex-1">
       <a href="index.html" class="-m-1.5 p-1.5">
         <span class="sr-only">Warsaw Gravel Race</span>
-        <img src="/public/img/logo-dark.svg" alt="" class=" h-auto  w-size-40" />
+        <img src="../img/logo-dark.svg" alt="" class=" h-auto  w-size-40" />
       </a>
     </div>
     <div class="flex items-start justify-end lg:hidden">
@@ -25,7 +25,7 @@ class WgrNav extends HTMLElement {
       <a href="team.html" class="text-sm/6 font-semibold text-secondary hover:text-accent1">Team</a>
       <a href="partners.html" class="text-sm/6 font-semibold text-secondary hover:text-accent1">Our Partners</a>
       <a href="#" class="text-sm/6 font-semibold text-secondary hover:text-accent1">Media</a>
-      <a href="/pl/index.html" class="text-sm/6 font-semibold text-secondary hover:text-accent1">🇵🇱 PL</a>
+      <a href="../pl/index.html" class="text-sm/6 font-semibold text-secondary hover:text-accent1">🇵🇱 PL</a>
       
     </el-popover-group>
     
@@ -39,7 +39,7 @@ class WgrNav extends HTMLElement {
 
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img src="/public/img/logo-horizontal.svg" alt="" class="h-4 w-auto" />
+              <img src="../img/logo-horizontal.svg" alt="" class="h-4 w-auto" />
             </a>
             
             <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 mr-1 text-primary">
@@ -63,7 +63,7 @@ class WgrNav extends HTMLElement {
                
               </div>
               <div class="py-6">
-                <a href="/pl/index.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">🇵🇱 PL</a>
+                <a href="../pl/index.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">🇵🇱 PL</a>
               </div>
             </div>
           </div>
@@ -73,6 +73,34 @@ class WgrNav extends HTMLElement {
   </el-dialog>
 </header>
     `;
+    const dialog = this.querySelector("#mobile-menu");
+    if (dialog) {
+      const links = dialog.querySelectorAll("a[href]");
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const href = link.getAttribute("href") || "";
+          const url = new URL(href, window.location.href);
+          const targetId = url.hash.slice(1);
+          const samePage =
+            url.pathname.replace(/\/+$/, "") === window.location.pathname.replace(/\/+$/, "");
+
+          if (targetId && samePage) {
+            event.preventDefault();
+            const targetEl = document.getElementById(targetId);
+            dialog.close();
+            if (targetEl) {
+              requestAnimationFrame(() => {
+                targetEl.scrollIntoView({ behavior: "smooth" });
+                history.replaceState(null, "", `#${targetId}`);
+              });
+            }
+            return;
+          }
+
+          dialog.close();
+        });
+      });
+    }
   }
 }
 
